@@ -198,6 +198,36 @@ body {
   letter-spacing: 1.5px;
 }
 
+.nav-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.nav-switch-link {
+  background: rgba(251, 238, 158, 0.08);
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-switch-link:hover {
+  background: rgba(251, 238, 158, 0.18);
+  color: var(--gold-champagne);
+  border-color: var(--gold-champagne);
+  transform: translateY(-1px);
+}
+
 /* Dedicated Settings Capsule Button in Top Right */
 .btn-dedicated-settings {
   background: rgba(251, 238, 158, 0.08);

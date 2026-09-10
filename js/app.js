@@ -55,8 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const bgVideo2 = document.getElementById("bg-video-2");
   const selectBgVideoMode = document.getElementById("select-bg-video-mode");
 
-  // State
-  let currentTarget = CONFIG.activeLaunchTarget || "fest"; // 'fest', 'portal', or 'both'
+  // Page Mode: 'fest' (index.html) or 'portal' (student-portal.html)
+  const pageMode = document.body.dataset.pageMode || "fest";
+  let currentTarget = pageMode === "portal" ? "portal" : "fest";
   let isLaunching = false;
   let chargeInterval = null;
   let chargeProgress = 0;
@@ -123,16 +124,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyConfigToDOM() {
     if (CONFIG.festTitle) {
-      navFestTitle.textContent = CONFIG.festTitle;
-      heroTitle.textContent = CONFIG.festTitle;
-      document.title = `${CONFIG.festTitle} — Arts Fest & Student Portal Launch`;
+      if (navFestTitle) navFestTitle.textContent = CONFIG.festTitle;
+      if (heroTitle) heroTitle.textContent = CONFIG.festTitle;
+      document.title = pageMode === "portal"
+        ? `${CONFIG.festTitle} — Student Portal Launch`
+        : `${CONFIG.festTitle} — Arts Fest Website Launch`;
     }
-    if (CONFIG.festMottoMalayalam) {
+    if (CONFIG.festMottoMalayalam && heroMotto) {
       heroMotto.textContent = `'${CONFIG.festMottoMalayalam.replace(/'/g, '')}'`;
     }
     if (CONFIG.festTagline) {
-      heroTagline.textContent = `${CONFIG.festTagline} — Illuminating Art, Celebrating Legacy`;
-      navFestSubtitle.textContent = CONFIG.festTagline;
+      if (heroTagline) {
+        heroTagline.textContent = pageMode === "portal"
+          ? `Student Portal & Results Gateway — Illuminating Art, Celebrating Legacy`
+          : `Walthakun Darul Uloom Artfest — Illuminating Art, Celebrating Legacy`;
+      }
+      if (navFestSubtitle) {
+        navFestSubtitle.textContent = pageMode === "portal" ? "Student Portal Launch" : "Arts Fest Website Launch";
+      }
     }
 
     if (window.soundEngine) {
@@ -140,39 +149,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Dual Target Selector Handler (Capsule Text Only)
+  // Target Handler (Capsule Text Only)
   function setLaunchTarget(target) {
     currentTarget = target;
     CONFIG.activeLaunchTarget = target;
 
-    [tabLaunchFest, tabLaunchPortal, tabLaunchBoth].forEach(btn => btn.classList.remove("active"));
+    const tabs = [tabLaunchFest, tabLaunchPortal, tabLaunchBoth].filter(Boolean);
+    tabs.forEach(btn => btn.classList.remove("active"));
 
     if (target === "fest") {
-      tabLaunchFest.classList.add("active");
-      capsuleBtnText.textContent = "LAUNCH ARTS FEST WEBSITE";
+      if (tabLaunchFest) tabLaunchFest.classList.add("active");
+      if (capsuleBtnText) capsuleBtnText.textContent = "LAUNCH ARTS FEST WEBSITE";
     } else if (target === "portal") {
-      tabLaunchPortal.classList.add("active");
-      capsuleBtnText.textContent = "LAUNCH STUDENT PORTAL";
+      if (tabLaunchPortal) tabLaunchPortal.classList.add("active");
+      if (capsuleBtnText) capsuleBtnText.textContent = "LAUNCH STUDENT PORTAL";
     } else if (target === "both") {
-      tabLaunchBoth.classList.add("active");
-      capsuleBtnText.textContent = "LAUNCH BOTH WEBSITES";
+      if (tabLaunchBoth) tabLaunchBoth.classList.add("active");
+      if (capsuleBtnText) capsuleBtnText.textContent = "LAUNCH BOTH WEBSITES";
     }
   }
 
-  tabLaunchFest.addEventListener("click", () => {
-    window.soundEngine.playClick();
-    setLaunchTarget("fest");
-  });
+  if (tabLaunchFest) {
+    tabLaunchFest.addEventListener("click", () => {
+      window.soundEngine.playClick();
+      setLaunchTarget("fest");
+    });
+  }
 
-  tabLaunchPortal.addEventListener("click", () => {
-    window.soundEngine.playClick();
-    setLaunchTarget("portal");
-  });
+  if (tabLaunchPortal) {
+    tabLaunchPortal.addEventListener("click", () => {
+      window.soundEngine.playClick();
+      setLaunchTarget("portal");
+    });
+  }
 
-  tabLaunchBoth.addEventListener("click", () => {
-    window.soundEngine.playClick();
-    setLaunchTarget("both");
-  });
+  if (tabLaunchBoth) {
+    tabLaunchBoth.addEventListener("click", () => {
+      window.soundEngine.playClick();
+      setLaunchTarget("both");
+    });
+  }
 
   // Capsule Launch Button Interactions
   btnMasterLaunch.addEventListener("mouseenter", () => {
