@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WALTAKUN 2026 — Arts Fest & Student Portal Launch</title>
+  
+  <!-- Meta & Social Sharing -->
+  <meta name="description" content="ഫന്നിന്റെ കൗന് — Official Website Launch Portal for WALTAKUN 2026 Artfest & Student Portal.">
+  <meta property="og:title" content="WALTAKUN 2026 — Art Fest & Student Portal Launch">
+  <meta property="og:description" content="ഫന്നിന്റെ കൗന് — Experience the grand unveiling of WALTAKUN 2026.">
+  <meta property="og:image" content="assets/logo-transparent.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-transparent.png">
+
+  <!-- Google Fonts: Cinzel, Outfit, and Malayalam Gayathri -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Gayathri:wght@700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Velvet Crimson Background & Video Background -->
+  <div class="ambient-glow-background"></div>
+  
+  <div class="video-bg-container">
+    <video id="bg-video-1" class="bg-video active" autoplay muted playsinline preload="auto">
+      <source src="assets/videos/logo_drifting.mp4" type="video/mp4">
+      <source src="Yellow_logo_drifting_on_red_20260910125820.mp4" type="video/mp4">
+    </video>
+    <video id="bg-video-2" class="bg-video" muted playsinline preload="auto">
+      <source src="assets/videos/patterns_floating.mp4" type="video/mp4">
+      <source src="Lettering_and_patterns_floating_1080p_20260910125832.mp4" type="video/mp4">
+    </video>
+    <div class="video-tint-vignette"></div>
+  </div>
+
+  <canvas id="particles-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Page Layout Wrapper -->
+  <div class="app-container">
+    
+    <!-- Top Minimal Navigation Bar -->
+    <header class="header-nav">
+      <a href="#" class="brand-link">
+        <img src="assets/logo-transparent.png" alt="WALTAKUN Logo" class="nav-logo-thumb">
+        <div class="nav-brand-info">
+          <span class="nav-fest-title" id="nav-fest-title">WALTAKUN 2026</span>
+          <span class="nav-fest-subtitle" id="nav-fest-subtitle">Darul Uloom Artfest</span>
+        </div>
+      </a>
+
+      <!-- Dedicated Settings Capsule Button in Top Right -->
+      <button id="btn-open-settings" class="btn-dedicated-settings" title="Open Launch Settings">
+        <span>Settings</span>
+      </button>
+    </header>
+
+    <!-- =======================================================
+         SECTION 1: TOP HERO (Official Artwork, Motto, Typography)
+         ======================================================= -->
+    <section class="hero-top-section">
+      
+      <!-- Official Poster Motto Callout -->
+      <div class="poster-motto-callout" id="hero-motto">
+        'ഫന്നിന്റെ കൗന്'
+      </div>
+
+      <!-- Official Transparent Typography Logo Showcase -->
+      <div class="hero-logo-showcase">
+        <div class="hero-logo-glow"></div>
+        <img src="assets/logo-transparent.png" alt="WALTAKUN 2026 Typography Logo" class="hero-logo-img">
+      </div>
+
+      <!-- Ornate Concentric Circles Divider Motif -->
+      <div class="ornate-circles-divider"></div>
+
+      <h1 class="fest-hero-title" id="hero-title">WALTAKUN 2026</h1>
+      <p class="fest-hero-sub" id="hero-tagline">Walthakun Darul Uloom Artfest — Illuminating Art, Celebrating Legacy</p>
+
+      <!-- Animated Scroll Down Guide to the Launch Arena -->
+      <a href="#launch-arena" class="scroll-down-prompt">
+        <span class="scroll-text">Scroll to Unveil</span>
+        <div class="scroll-chevron-bounce">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </div>
+      </a>
+
+    </section>
+
+    <!-- =======================================================
+         SECTION 2: BIG CAPSULE LAUNCH BUTTON IN THE MIDDLE
+         PURE TEXT ONLY - NO EMOJIS
+         ======================================================= -->
+    <section id="launch-arena" class="launch-middle-section">
+      <div class="console-container-glass">
+        <div class="console-decor-line"></div>
+
+        <span class="console-heading-tag">Grand Launch Console</span>
+        <h2 class="console-main-heading">Unveil Digital Portals</h2>
+        <p class="console-sub-text">Select your destination and trigger the official unveiling ceremony.</p>
+
+        <!-- Dual Website Selector Tabs (Capsule Style, Text Only) -->
+        <div class="launch-target-selector">
+          <button id="tab-launch-fest" class="tab-select-btn active">
+            Arts Fest Website
+          </button>
+          <button id="tab-launch-portal" class="tab-select-btn">
+            Student Portal
+          </button>
+          <button id="tab-launch-both" class="tab-select-btn">
+            Unveil Both Portals
+          </button>
+        </div>
+
+        <!-- BIG CAPSULE LAUNCH BUTTON (TEXT ONLY, NO EMOJIS) -->
+        <div class="capsule-launch-arena">
+          <div class="capsule-pulse-aura"></div>
+          
+          <button id="btn-master-launch" class="btn-grand-capsule-launch" title="Launch Website">
+            <span class="capsule-btn-text" id="capsule-btn-text">LAUNCH ARTS FEST WEBSITE</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SECTION 3: FESTIVAL HIGHLIGHTS (CLEAN & NO INSTAGRAM)
+         ======================================================= -->
+    <section class="highlights-showcase-section">
+      <div class="showcase-title-row">
+        <div class="showcase-line"></div>
+        <h3 class="showcase-title">The Grand Arena Awaits</h3>
+        <div class="showcase-line"></div>
+      </div>
+
+      <div class="fest-stats-grid">
+        <div class="stat-glass-card">
+          <div class="stat-number">50+</div>
+          <div class="stat-desc">Literary, Fine Arts and Cultural Competitions</div>
+        </div>
+        <div class="stat-glass-card">
+          <div class="stat-number">4</div>
+          <div class="stat-desc">Grand Cultural Stages and Arenas</div>
+        </div>
+        <div class="stat-glass-card">
+          <div class="stat-number">1000+</div>
+          <div class="stat-desc">Student Artists and Competitors</div>
+        </div>
+        <div class="stat-glass-card">
+          <div class="stat-number">Championship</div>
+          <div class="stat-desc">The Crown and Glory of Walthakun 2026</div>
+        </div>
+      </div>
+
+      <!-- Ornate Lace Footer Trim -->
+      <div class="ornate-lace-trim"></div>
+    </section>
+
+    <!-- Minimal Clean Footer -->
+    <footer class="app-footer">
+      <p>© 2026 <strong>WALTAKUN 2026</strong> • 'ഫന്നിന്റെ കൗന്' • Walthakun Darul Uloom Artfest</p>
+      <p style="margin-top: 0.3rem; opacity: 0.65;">Official Digital Launch Platform</p>
+    </footer>
+
+  </div>
+
+  <!-- =======================================================
+       DEDICATED FULL SETTINGS MODAL (NO INSTAGRAM)
+       ======================================================= -->
+  <div id="settings-modal" class="settings-modal-wrapper">
+    <div class="settings-glass-card">
+      <div class="settings-header">
+        <h3>Launch Console Settings</h3>
+        <p>Configure destination URLs, festival identity, audio, and launch behavior.</p>
+      </div>
+
+      <!-- Destination URLs -->
+      <div class="settings-section-label">Target Destinations</div>
+      
+      <div class="form-group">
+        <label for="input-artsfest-url">Arts Fest Website URL:</label>
+        <input type="url" id="input-artsfest-url" class="glass-input" placeholder="https://waltakun2026.com">
+      </div>
+
+      <div class="form-group">
+        <label for="input-portal-url">Student Portal URL:</label>
+        <input type="url" id="input-portal-url" class="glass-input" placeholder="https://portal.waltakun2026.com">
+      </div>
+
+      <!-- Identity -->
+      <div class="settings-section-label">Festival Identity</div>
+
+      <div class="form-group">
+        <label for="input-fest-title">Festival Title:</label>
+        <input type="text" id="input-fest-title" class="glass-input" value="WALTAKUN 2026">
+      </div>
+
+      <div class="form-group">
+        <label for="input-fest-motto">Malayalam Motto:</label>
+        <input type="text" id="input-fest-motto" class="glass-input" value="ഫന്നിന്റെ കൗന്">
+      </div>
+
+      <!-- Launch Preferences -->
+      <div class="settings-section-label">Launch Sequence & Audio</div>
+
+      <div class="form-group">
+        <label for="input-countdown-seconds">Countdown Duration (Seconds):</label>
+        <input type="number" id="input-countdown-seconds" class="glass-input" min="2" max="10" value="5">
+      </div>
+
+      <div class="form-toggle-row">
+        <span>Enable Sound Effects (Classical Timer & Deep Bass)</span>
+        <input type="checkbox" id="check-sound-enabled" checked>
+      </div>
+
+      <div class="form-toggle-row">
+        <span>Require 2-Second Hold on Launch Button</span>
+        <input type="checkbox" id="check-hold-to-launch">
+      </div>
+
+      <div class="form-toggle-row">
+        <span>Stage Fullscreen Mode</span>
+        <input type="checkbox" id="check-stage-fullscreen">
+      </div>
+
+      <div class="form-group" style="margin-top: 1rem;">
+        <label for="select-bg-video-mode">Background Motion Video:</label>
+        <select id="select-bg-video-mode" class="glass-input" style="cursor: pointer;">
+          <option value="alternate">Alternating Loop (Both Motion Videos)</option>
+          <option value="video1">Motion 1: Yellow Logo Drifting</option>
+          <option value="video2">Motion 2: Lettering & Patterns</option>
+        </select>
+      </div>
+
+      <!-- Actions -->
+      <div class="settings-actions">
+        <button id="btn-settings-reset" class="btn-settings-reset">Reset to Defaults</button>
+        <div class="settings-action-right">
+          <button id="btn-settings-cancel" class="btn-modal-cancel">Cancel</button>
+          <button id="btn-settings-save" class="btn-modal-save">Save & Apply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================
+       FULLSCREEN LAUNCH SEQUENCE THEATER
+       Classical countdown ticks + deep bass drop + confetti
+       TEXT ONLY, NO EMOJIS
+       ======================================================= -->
+  <div id="launch-overlay" class="launch-overlay-theater">
+    <div class="theater-content-box">
+      
+      <!-- Mini Official Logo in Theater -->
+      <img src="assets/logo-transparent.png" alt="WALTAKUN Logo" class="theater-logo-mini">
+
+      <!-- Step 1: Classical Metronome Countdown -->
+      <div id="launch-step-countdown" class="countdown-theater-step">
+        <div class="classical-countdown-digit" id="launch-counter-num">5</div>
+        <div class="countdown-theater-caption" id="launch-countdown-caption">UNVEILING PLATFORM...</div>
+      </div>
+
+      <!-- Step 2: Bass Drop, Celebration, and Smooth Redirect -->
+      <div id="launch-step-success" class="unveil-theater-step">
+        <div class="unveil-live-badge" id="unveil-live-badge">PLATFORM UNVEILED</div>
+        <h2 class="unveil-heading" id="unveil-heading">WALTAKUN 2026 IS LIVE</h2>
+        <p class="unveil-sub" id="unveil-sub">Welcome to the official digital platform.</p>
+
+        <!-- Redirect Progress Bar -->
+        <div class="theater-redirect-bar-track">
+          <div id="theater-redirect-bar-fill" class="theater-redirect-bar-fill"></div>
+        </div>
+        <div id="theater-timer-status" class="theater-timer-status">
+          Transferring to website in <strong>4</strong> seconds...
+        </div>
+
+        <!-- Immediate Fallback Capsule Button -->
+        <button id="btn-theater-proceed" class="btn-theater-proceed">
+          ENTER WEBSITE NOW
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/config.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
